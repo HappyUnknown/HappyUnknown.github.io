@@ -34,7 +34,7 @@ function toUA()
     document.querySelector('#btn-sell').innerHTML = "Продати"
     document.querySelector('#lang-switch-en').style.fontWeight = "normal"
     document.querySelector('#lang-switch-ua').style.fontWeight = "bold"
-    // document.querySelector('#infoblock-title').innerHTML = "ІНФОРМАЦІЙНИЙ <br/> БЛОК БАНКУ"
+    document.querySelector('#infoblock-title').innerHTML = "ІНФОРМАЦІЙНИЙ <br/> БЛОК БАНКУ"
 }
 function toEN()
 {
@@ -51,7 +51,7 @@ function toEN()
     document.querySelector('#btn-sell').innerHTML = "Sell"
     document.querySelector('#lang-switch-en').style.fontWeight = "bold"
     document.querySelector('#lang-switch-ua').style.fontWeight = "normal"
-    // document.querySelector('#infoblock-title').innerHTML = "INFORMATIONAL <br/> BANK BLOCK"
+    document.querySelector('#infoblock-title').innerHTML = "ІНФОРМАЦІЙНИЙ <br/> БЛОК БАНКУ"
 }
 function requestQuantity()
 {
@@ -60,26 +60,42 @@ function requestQuantity()
 function sell()
 {
     const quantity = requestQuantity();
-    if(quantity!=null)
+    if(typeof(quantity)=='number')
         alert('Ви продали ' + parseFloat(quantity) + "₴!");
+    else if(quantity==null)
+        alert('Неможливо опрацювати порожнє значення');
+    else
+        alert('Неможливо опрацювати нечислове значення');
 }
 function buy()
 {
     const quantity = requestQuantity();
-    if(quantity!=null)
+    if(typeof(quantity)=='number')
         alert('Ви купили ' + parseFloat(quantity)+ "₴!");
+    else if(quantity==null)
+        alert('Неможливо опрацювати порожнє значення');
+    else
+        alert('Неможливо опрацювати нечислове значення');
 }
 function payIntoAccount()
 {
     const quantity = requestQuantity();
-    if(quantity!=null)
+    if(typeof(quantity)=='number')
         alert(parseFloat(quantity) + '₴ внесено на рахунок!');
+    else if(quantity==null)
+        alert('Неможливо опрацювати порожнє значення');
+    else
+        alert('Неможливо опрацювати нечислове значення');
 }
 function payIntoCard()
 {
     const quantity = requestQuantity();
-    if(quantity!=null)
+    if(typeof(quantity)=='number')
         alert(parseFloat(quantity) + '₴ внесено на карту!');
+    else if(quantity==null)
+        alert('Неможливо опрацювати порожнє значення');
+    else
+        alert('Неможливо опрацювати нечислове значення');
 }
 function widthraw(quantity)
 {
@@ -88,8 +104,12 @@ function widthraw(quantity)
 function widthrawCustom()
 {
     const quantity = requestQuantity();
-    if(quantity!=null)
+    if(typeof(quantity)=='number')
         widthraw(parseFloat(quantity));
+    else if(quantity==null)
+        alert('Неможливо опрацювати порожнє значення');
+    else
+        alert('Неможливо опрацювати нечислове значення');
 }
 function openServiceList()
 {
