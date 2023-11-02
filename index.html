@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenomeLab - Frontend Task (2)</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <table class="header-table">
+            <tr>
+                <td class="toolbar-left">
+                    <p>
+                        Best
+                        <sup>
+                            Bank
+                        </sup>
+                    </p>        
+                </td>
+                <td class="toolbar-center">
+                    <div class="image-text-container" onclick="window.location.href='tel:+380123456789'">
+                        <img class="icon-img icon-indent invert" src="https://cdn3.iconfinder.com/data/icons/feather-5/24/phone-512.png">
+                        <p>+38-(012)-34-56-789</p>
+                    </div>
+                </td>
+                <td class="toolbar-right">
+                    <div>
+                        <p>
+                            <a id="lang-switch-en" href="#" onclick="toEN()">EN</a>
+                            |
+                            <a id="lang-switch-ua" href="#" onclick="toUA()">UA</a>
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </header>
+    <div class="container">
+        <main>
+            <h3 id="body-title" class="text-highlight">Виберіть операцію</h3>
+            <div class="form-row">
+                <div class="form-item form-highlight">
+                    <p id="chenkout-title" class="form-text">
+                        ЗНЯТИ КОШТИ
+                        <br/>
+                        До 50 000 UAH
+                    </p>
+                    <br/>
+                    <!--In order to prevent postponing-->
+                    <table>
+                        <tr>
+                            <td>
+                                <!--To align properly-->
+                                <button class="form-button btn-neutral" onclick="widthraw(100)">100 UAH</button>
+                            </td>
+                            <td>
+                                <button class="form-button btn-neutral" onclick="widthraw(200)">200 UAH</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="form-button btn-neutral" onclick="widthraw(500)">500 UAH</button>
+                            </td>
+                            <td>
+                                <button class="form-button btn-neutral" onclick="widthraw(1000)">1000 UAH</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button id="btn-another-value" class="form-button btn-neutral" style="width: 100%;" onclick="widthrawCustom()">Інша сума</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div>
+                    <div class="form-item form-neutral">
+                        <div class="form-sub-item">
+                            <p id="pay-cash-in-title" class="form-text">
+                                ВНЕСТИ КОШТИ
+                                <br/>
+                                До 150 000 UAH
+                            </p>
+                        </div>
+                        <br/>
+                        <!--In order to prevent postponing-->
+                        <table>
+                            <tr>
+                                <td>
+                                    <!--To align properly-->
+                                    <button id="btn-to-card" class="form-button btn-highlight" onclick="payIntoCard()">На карту</button>
+                                </td>
+                                <td>
+                                    <button id="btn-to-account" class="form-button btn-highlight" onclick="payIntoAccount()">На рахунок</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                    </div>
+                    <div class="form-item form-neutral">
+                        <div class="form-sub-item">
+                            <p id="all-ops-title" class="form-text">
+                                ВСІ ОПЕРАЦІЇ
+                                <br/>
+                                Погашення кредиту, etc
+                            </p>
+                        </div>
+                        <br/>
+                        <!--In order to prevent postponing-->
+                        <button id="btn-open-service-list" class="btn-highlight" onclick="openServiceList()">Відкрити список послуг</button>
+                        <br>
+                    </div>
+                </div>
+                <div class="form-item form-neutral">
+                    <div class="form-sub-item">
+                        <p id="conversion-form-title" class="form-text">
+                            ОБМІН ВАЛЮТ
+                            <br/>
+                            USD, EUR, MLD, CHF
+                        </p>
+                    </div> 
+                    <div class="form-sub-item">
+                        <!--In order to prevent postponing-->
+                        <table>
+                            <tr>
+                                <td>
+                                    <!--To align properly-->
+                                    <p id="buy-usd-price">00.00</p>
+                                </td>
+                                <td>
+                                    <div class="image-text-container">
+                                        <img class="icon-img" src="https://cdn4.iconfinder.com/data/icons/world-flags-12/512/Untitled-2-10-256.png"/>
+                                        <p>USD/UAH</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p id="sell-usd-price">00.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!--To align properly-->
+                                    <p id="buy-eur-price">00.00</p>
+                                </td>
+                                <td>
+                                    <div class="image-text-container">
+                                        <img class="icon-img" src="https://cdn.countryflags.com/thumbs/europe/flag-round-250.png"/>
+                                        <p>USD/UAH</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p id="sell-eur-price">00.00</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <!--To align properly-->
+                                    <p id="buy-chf-price">00.00</p>
+                                </td>
+                                <td>
+                                    <div class="image-text-container">
+                                        <img class="icon-img" src="https://cdn2.iconfinder.com/data/icons/world-flag-2/30/15-512.png"/>
+                                        <p>USD/UAH</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p id="sell-chf-price">00.00</p>
+                                </td>
+                            </tr>
+                        </table>  
+                        <br/>                          
+                        <table>
+                            <tr>
+                                <td>
+                                    <!--To align properly-->
+                                    <button id="btn-buy" class="form-button btn-highlight" onclick="buy()">Купити</button>
+                                </td>
+                                <td>
+                                    <button id="btn-sell" class="form-button btn-highlight" onclick="sell()">Продати</button>
+                                </td>
+                            </tr>
+                        </table>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+            <script src="main.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        </main>
+        <footer>
+            <br/>
+            <p id="infoblock-title" class="text-notice">
+                ІНФОРМАЦІЙНИЙ <br/> БЛОК БАНКУ
+            </p>
+            <br/>
+        </footer>
+    </div>
+</body>
+</html>
