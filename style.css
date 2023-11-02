@@ -151,6 +151,10 @@ button
 {
     margin: 10px;
 }
+.component {
+    position: sticky;
+    top: 0;
+  }
 @media screen and (min-width: 750px) {
 
     .form-row
