@@ -55,12 +55,12 @@ function toEN()
 }
 function requestQuantity()
 {
-    return prompt('Вкажіть кількість [₴]');
+    return parseFloat(prompt('Вкажіть кількість [₴]'));
 }
 function sell()
 {
     const quantity = requestQuantity();
-    if(typeof(quantity)=='number')
+    if(Number.isFinite(quantity))
         alert('Ви продали ' + parseFloat(quantity) + "₴!");
     else if(quantity==null)
         alert('Неможливо опрацювати порожнє значення');
@@ -70,7 +70,7 @@ function sell()
 function buy()
 {
     const quantity = requestQuantity();
-    if(typeof(quantity)=='number')
+    if(Number.isFinite(quantity))
         alert('Ви купили ' + parseFloat(quantity)+ "₴!");
     else if(quantity==null)
         alert('Неможливо опрацювати порожнє значення');
@@ -80,7 +80,7 @@ function buy()
 function payIntoAccount()
 {
     const quantity = requestQuantity();
-    if(typeof(quantity)=='number')
+    if(Number.isFinite(quantity))
         alert(parseFloat(quantity) + '₴ внесено на рахунок!');
     else if(quantity==null)
         alert('Неможливо опрацювати порожнє значення');
@@ -90,7 +90,7 @@ function payIntoAccount()
 function payIntoCard()
 {
     const quantity = requestQuantity();
-    if(typeof(quantity)=='number')
+    if(Number.isFinite(quantity))
         alert(parseFloat(quantity) + '₴ внесено на карту!');
     else if(quantity==null)
         alert('Неможливо опрацювати порожнє значення');
@@ -104,7 +104,7 @@ function widthraw(quantity)
 function widthrawCustom()
 {
     const quantity = requestQuantity();
-    if(typeof(quantity)=='number')
+    if(Number.isFinite(quantity))
         widthraw(parseFloat(quantity));
     else if(quantity==null)
         alert('Неможливо опрацювати порожнє значення');
