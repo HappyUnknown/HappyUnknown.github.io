@@ -51,7 +51,7 @@ function toEN()
     document.querySelector('#btn-sell').innerHTML = "Sell"
     document.querySelector('#lang-switch-en').style.fontWeight = "bold"
     document.querySelector('#lang-switch-ua').style.fontWeight = "normal"
-    document.querySelector('#infoblock-title').innerHTML = "ІНФОРМАЦІЙНИЙ <br/> БЛОК БАНКУ"
+    document.querySelector('#infoblock-title').innerHTML = "BANK INFORMATIONAL <br/> BLOCK"
 }
 function requestQuantity()
 {
