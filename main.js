@@ -39,11 +39,11 @@ function toUA()
 function toEN()
 {
     document.querySelector('#body-title').innerHTML = "Select operation"
-    document.querySelector('#chenkout-title').innerHTML = "CHECKOUT<br/>Up to 50 000 UAH"
+    document.querySelector('#chenkout-title').innerHTML = "WITHDRAW<br/>Up to 50 000 UAH"
     document.querySelector('#btn-another-value').innerHTML = "Another value"
     document.querySelector('#btn-to-card').innerHTML = "To card"
     document.querySelector('#btn-to-account').innerHTML = "To account"
-    document.querySelector('#pay-cash-in-title').innerHTML = "CHECKIN<br/>Up to 150 000 UAH"
+    document.querySelector('#pay-cash-in-title').innerHTML = "PAY IN<br/>Up to 150 000 UAH"
     document.querySelector('#all-ops-title').innerHTML = "ALL OPERATIONS<br/>Debt fulfilling, etc"
     document.querySelector('#btn-open-service-list').innerHTML = "Open service list"
     document.querySelector('#conversion-form-title').innerHTML = "CURRENCY EXCHANGE<br/>USD, EUR, MLD, CHF"
